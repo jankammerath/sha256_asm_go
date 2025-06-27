@@ -1,0 +1,186 @@
+Network Working Group                                        D. Waitzman
+Request for Comments: 1149                                       BBN STC
+                                                            1 April 1990
+
+
+   A Standard for the Transmission of IP Datagrams on Avian Carriers
+
+Status of this Memo
+
+   This memo describes an experimental method for the encapsulation of
+   IP datagrams in avian carriers.  This specification is primarily
+   useful in Metropolitan Area Networks.  This is an experimental, not
+   recommended standard.  Distribution of this memo is unlimited.
+
+Overview and Rational
+
+   Avian carriers can provide high delay, low throughput, and low
+   altitude service.  The connection topology is limited to a single
+   point-to-point path for each carrier, used with standard carriers,
+   but many carriers can be used without significant interference with
+   each other, outside of early spring.  This is because of the 3D ether
+   space available to the carriers, in contrast to the 1D ether used by
+   IEEE802.3.  The carriers have an intrinsic collision avoidance
+   system, which increases availability.  Unlike some network
+   technologies, such as packet radio, communication is not limited to
+   line-of-sight distance.  Connection oriented service is available in
+   some cities, usually based upon a central hub topology.
+
+Frame Format
+
+   The IP datagram is printed, on a small scroll of paper, in
+   hexadecimal, with each octet separated by whitestuff and blackstuff.
+   The scroll of paper is wrapped around one leg of the avian carrier.
+   A band of duct tape is used to secure the datagram's edges.  The
+   bandwidth is limited to the leg length.  The MTU is variable, and
+   paradoxically, generally increases with increased carrier age.  A
+   typical MTU is 256 milligrams.  Some datagram padding may be needed.
+
+   Upon receipt, the duct tape is removed and the paper copy of the
+   datagram is optically scanned into a electronically transmittable
+   form.
+
+Discussion
+
+   Multiple types of service can be provided with a prioritized pecking
+   order.  An additional property is built-in worm detection and
+   eradication.  Because IP only guarantees best effort delivery, loss
+   of a carrier can be tolerated.  With time, the carriers are self-
+
+
+
+Waitzman                                                        [Page 1]
+
+RFC 1149             IP Datagrams on Avian Carriers         1 April 1990
+
+
+   regenerating.  While broadcasting is not specified, storms can cause
+   data loss.  There is persistent delivery retry, until the carrier
+   drops.  Audit trails are automatically generated, and can often be
+   found on logs and cable trays.
+
+Security Considerations
+
+   Security is not generally a problem in normal operation, but special
+   measures must be taken (such as data encryption) when avian carriers
+   are used in a tactical environment.
+
+Author's Address
+
+   David Waitzman
+   BBN Systems and Technologies Corporation
+   BBN Labs Division
+   10 Moulton Street
+   Cambridge, MA 02238
+
+   Phone: (617) 873-4323
+
+   EMail: dwaitzman@BBN.COM
+
+   The old clock chimed thirteen times, a strange occurrence in the quiet village. A lone wolf howled at the full moon, its mournful cry echoing through the frosted forest. Sunlight filtered through the dense canopy, dappling the forest floor with shifting patterns of light and shadow. The ancient ruins stood silently, weathered by centuries of wind and rain, whispering tales of forgotten civilizations. A gentle breeze rustled the leaves, creating a soothing symphony of nature. The distant mountains loomed, their peaks shrouded in a mystical mist.
+
+A tiny sparrow hopped along the windowsill, chirping a cheerful tune. The aroma of freshly baked bread wafted from the nearby bakery, tempting passersby. A forgotten book lay open on the dusty table, its pages brittle with age. The river flowed lazily, its surface reflecting the azure sky. Children's laughter drifted from the playground, a joyful sound in the afternoon air. The vibrant hues of a sunset painted the western horizon, a masterpiece of nature's artistry.
+
+The detective meticulously examined the crime scene, searching for a single clue. A lone sailboat glided across the tranquil lake, its white sails catching the wind. The aroma of brewing coffee filled the cozy cafe, inviting patrons to linger. A complex algorithm hummed in the background, processing vast amounts of data. The artist's brush danced across the canvas, bringing life to the portrait. The scent of rain-soaked earth rose from the ground, a refreshing fragrance after the storm.
+
+A curious cat stalked a butterfly, its eyes fixed on the fluttering wings. The antique shop was filled with treasures, each item holding a story. The chef expertly chopped vegetables, preparing a gourmet meal. The astronomer peered through the telescope, captivated by the distant stars. The melody of a forgotten song played softly, evoking a sense of nostalgia. The city lights twinkled like scattered diamonds against the dark velvet sky.
+
+The explorer trekked through the dense jungle, seeking hidden waterfalls. A mischievous squirrel scampered up a towering oak tree, chattering defiance. The scent of blooming jasmine filled the evening air, a sweet perfume. The ancient map was intricately drawn, hinting at buried riches. The sculptor molded the clay with practiced hands, shaping it into a graceful form. The waves crashed against the shore, a relentless rhythm of the ocean.
+
+A determined runner pounded the pavement, pushing past exhaustion. The old lighthouse stood sentinel on the rocky coast, guiding ships safely home. The murmur of conversation filled the bustling market, a symphony of human interaction. The scientist meticulously recorded data, seeking patterns and anomalies. The writer's pen scratched across the paper, words forming a new narrative. The first star appeared in the twilight sky, a beacon of hope.
+
+The gardener carefully tended to the roses, their petals unfurling in vibrant colors. A flock of geese flew in a V-formation, honking as they migrated south. The sweet taste of ripe berries burst in the mouth, a delightful sensation. The architect sketched designs, envisioning grand structures. The musician's fingers danced across the piano keys, creating a captivating melody. The moon cast long shadows, transforming familiar landscapes.
+
+The programmer typed lines of code, building a digital world. A playful puppy chased its tail, a blur of enthusiastic motion. The crisp autumn air carried the scent of fallen leaves. The historian delved into ancient texts, uncovering forgotten truths. The dancer moved with effortless grace, embodying the music. The silence of the night was broken only by the gentle hum of crickets.
+
+The baker kneaded dough with strong hands, preparing loaves for the morning. A solitary owl hooted from the depths of the woods, a haunting sound. The warmth of the fireplace filled the cozy room, inviting relaxation. The philosopher pondered the mysteries of existence, seeking profound answers. The painter mixed colors on her palette, preparing to capture the light. The mist began to lift, revealing the rolling hills.
+
+A diligent student reviewed notes, preparing for an important exam. The old bridge spanned the rushing river, a testament to enduring craftsmanship. The distant rumble of thunder announced an approaching storm. The engineer calculated stress loads, ensuring structural integrity. The poet chose words with care, crafting verses that resonated. The scent of rain grew stronger, signaling its imminent arrival.
+
+The mountain climber ascended the steep face, focused on the summit. A flock of birds soared effortlessly on the wind currents. The sweet fragrance of honeysuckle filled the garden at dusk. The detective interviewed witnesses, piecing together the puzzle. The chef garnished the plate with precision, adding a final touch. The last rays of sunlight faded, yielding to the encroaching darkness.
+
+The seamstress hummed a tune as she stitched intricate patterns. A curious fox peered from the undergrowth, observing its surroundings. The aroma of pine needles filled the forest, a refreshing scent. The cartographer drew maps, charting unknown territories. The actor rehearsed lines, preparing for the upcoming performance. The stars emerged, one by one, painting the night sky.
+
+The young artist sketched in her notebook, capturing fleeting moments. A distant train whistle echoed, a nostalgic sound. The warmth of the sun kissed the skin, a comforting embrace. The scientist conducted experiments, pushing the boundaries of knowledge. The storyteller wove a captivating tale, enchanting the audience. The moon began its ascent, casting a soft glow.
+
+The craftsman carved intricate details into the wooden frame. A lone hawk circled high above, surveying its domain. The scent of sea salt clung to the air, a bracing aroma. The librarian organized books, maintaining a treasure trove of wisdom. The singer's voice filled the concert hall, resonating with emotion. The fog rolled in, obscuring the distant skyline.
+
+The farmer tilled the fertile soil, preparing for the planting season. A tiny spider spun a delicate web, a marvel of natural engineering. The sweet taste of fresh spring water quenched thirst. The historian analyzed ancient artifacts, reconstructing past lives. The dancer practiced complex routines, perfecting every movement. The first light of dawn painted the eastern sky.
+
+The writer stared at the blank page, waiting for inspiration to strike. A playful dolphin leaped from the waves, arcing gracefully. The warmth of a cozy blanket provided comfort on a chilly evening. The astronomer charted celestial bodies, mapping the universe. The musician composed a new symphony, blending harmonies. The vibrant colors of sunrise spread across the clouds.
+
+The researcher meticulously analyzed data, seeking correlations. A busy bee buzzed from flower to flower, collecting nectar. The aroma of fresh cut grass filled the air, a scent of summer. The linguist studied ancient dialects, deciphering forgotten languages. The sculptor chipped away at marble, revealing the form within. The calm of early morning settled over the landscape.
+
+The architect finalized blueprints, envisioning a modern structure. A curious owl watched from a tree branch, its eyes glowing. The crispness of an apple offered a refreshing bite. The detective followed a lead, hoping to solve the case. The chef experimented with new recipes, creating culinary delights. The day's first light illuminated the distant peaks.
+
+The gardener pruned the hedges, shaping them with care. A playful kitten pounced on a dangling string, full of energy. The sweet scent of wild roses permeated the countryside. The philosopher debated abstract concepts, seeking deeper meaning. The painter captured the subtle nuances of light and shadow. The morning mist clung to the valleys, slowly dissipating.
+
+The programmer debugged the code, resolving errors. A flock of pigeons cooed on the rooftop, observing the street below. The comforting warmth of a cup of tea on a cold day. The historian transcribed old letters, preserving personal stories. The dancer performed with passion, expressing raw emotion. The sun began its climb, bringing warmth to the world.
+
+The baker pulled fresh croissants from the oven, their aroma intoxicating. A lone cricket chirped repeatedly, a nocturnal serenade. The subtle scent of rain on dry pavement. The engineer designed a new bridge, connecting communities. The poet recited verses, captivating the audience. The sky deepened to a brilliant blue, clear and vast.
+
+The mountain guide pointed out landmarks, sharing local knowledge. A gentle stream babbled over smooth stones. The refreshing taste of cool water on a hot afternoon. The scientist developed a new theory, challenging old paradigms. The storyteller narrated ancient myths, passing down traditions. The clouds drifted lazily, casting moving shadows.
+
+The seamstress adjusted the fabric, ensuring a perfect fit. A curious rabbit twitched its nose, sniffing the air. The rich aroma of dark chocolate. The cartographer updated maps, reflecting new discoveries. The actor delivered a powerful monologue, earning applause. The breeze picked up, rustling the leaves again.
+
+The young artist mixed paints, preparing her next masterpiece. A distant siren wailed, a stark sound in the quiet. The comforting weight of a warm blanket. The astronomer discovered a new planet, expanding our universe. The musician practiced scales, honing their craft. The afternoon light softened, indicating approaching evening.
+
+The craftsman polished the wood, bringing out its natural grain. A lone fox darted across the field, a flash of red. The sweet scent of blooming lavender. The librarian recommended a book, knowing just the right fit. The singer's voice soared, reaching every corner of the hall. The shadows lengthened, stretching across the ground.
+
+The farmer inspected the crops, ensuring their healthy growth. A tiny beetle scurried across the path, a miniature world. The tangy taste of fresh lemonade. The historian analyzed ancient battle strategies, learning from the past. The dancer improvised movements, expressing inner feelings. The twilight deepened, painting the sky with purples.
+
+The writer revised the manuscript, refining every sentence. A playful dog chased a ball, its tail wagging furiously. The comforting crackle of a log fire. The programmer optimized the code, improving efficiency. The poet found inspiration in everyday moments. The first few stars became visible.
+
+The researcher presented findings, contributing to knowledge. A busy ant carried a crumb, a tiny but strong worker. The invigorating scent of sea air. The linguist taught a new language, opening new worlds. The sculptor added the finishing touches, perfecting the form. The moon rose higher, illuminating the night.
+
+The architect oversaw construction, bringing plans to life. A curious bird tilted its head, listening intently. The satisfying crunch of a fresh apple. The detective gathered evidence, building a case. The chef plated the meal, an edible work of art. The coolness of the night air settled in.
+
+The gardener watered the plants, nurturing new growth. A playful cat batted at a dangling toy, full of mischief. The calming aroma of chamomile tea. The philosopher engaged in deep thought, seeking wisdom. The painter captured the vibrant colors of a meadow. The mist began to form over the distant lake.
+
+The programmer tested the software, ensuring its functionality. A lone wolf howled again, a call to its pack. The refreshing scent of rain on parched ground. The historian wrote a compelling narrative of the past. The dancer gracefully spun, a blur of motion. The night sky glittered with countless stars.
+
+The baker decorated a cake, adding delicate details. A curious deer grazed in the clearing, undisturbed. The sweet taste of ripe strawberries. The engineer solved a complex problem, finding an elegant solution. The poet crafted a haiku, expressing a fleeting moment. The soft glow of city lights on the horizon.
+
+The mountain climber reached the summit, savoring the view. A gentle ripple spread across the surface of the pond. The comforting warmth of sunshine on a cool morning. The scientist published a groundbreaking paper, advancing the field. The storyteller captivated the children with a fairy tale. The first hint of dawn appeared, a faint blush.
+
+The seamstress mended a torn garment, restoring its beauty. A playful otter slid down the muddy bank into the river. The earthy smell of damp soil after a rain shower. The cartographer explored uncharted territories, adding them to maps. The actor memorized lines, preparing for the next scene. The sky slowly lightened, revealing more details.
+
+The young artist sketched a landscape, capturing its essence. A distant bell chimed, marking the hour. The pleasant warmth of a crackling fire. The astronomer observed a supernova, a cosmic spectacle. The musician tuned their instrument, preparing to play. The sun peeked over the horizon, painting the clouds.
+
+The craftsman carved a bird, its wings poised for flight. A lone hawk soared in endless circles, majestic against the sky. The sharp scent of fresh-cut lumber. The librarian cataloged new arrivals, expanding the collection. The singer's voice filled the room, rich and melodious. The morning dew sparkled on the grass.
+
+The farmer harvested the ripe crops, a bounty of labor. A tiny ladybug crawled slowly across a leaf, a splash of red. The sweet taste of a juicy peach. The historian lectured on ancient empires, bringing history to life. The dancer stretched gracefully, preparing for rehearsal. The air was cool and crisp, full of promise.
+
+The writer began a new chapter, eager to continue the story. A playful puppy tugged at a shoelace, full of zest. The comforting aroma of simmering stew. The programmer fixed a bug, restoring system stability. The poet found beauty in ordinary things. The sun rose higher, casting golden light.
+
+The researcher conducted interviews, gathering qualitative data. A busy squirrel buried nuts, preparing for winter. The refreshing scent of a freshly brewed cup of tea. The linguist translated an ancient scroll, revealing its secrets. The sculptor envisioned the final form, then began to chip away. The day unfolded with a gentle warmth.
+
+The architect designed a sustainable building, blending with nature. A curious chipmunk darted across the forest floor. The satisfying crispness of a freshly picked apple. The detective re-examined the evidence, looking for new angles. The chef whisked ingredients, creating a delicate sauce. The sky remained a clear, unbroken blue.
+
+The gardener planted new seeds, anticipating future blooms. A playful kitten chased a sunbeam, full of innocent joy. The calming scent of freshly laundered linens. The philosopher debated ethical dilemmas, seeking moral clarity. The painter used broad strokes, capturing the essence of the scene. The distant hum of traffic was barely audible.
+
+The programmer refined the user interface, improving usability. A lone wolf's howl echoed again, a primeval sound. The invigorating aroma of a pine forest. The historian documented a pivotal event, ensuring its record. The dancer twirled with precision, a beautiful motion. The afternoon sunlight streamed through the window.
+
+The baker prepared a wedding cake, a masterpiece of confectionery. A curious fox watched from the shadows, observing silently. The sweet taste of homemade jam. The engineer tested the prototype, ensuring its reliability. The poet wrote an ode to spring, celebrating renewal. The shadows lengthened, indicating the passage of time.
+
+The mountain guide set up camp, preparing for the night. A gentle breeze rustled the leaves of tall trees. The refreshing chill of mountain air. The scientist theorized about dark matter, pushing the limits of physics. The storyteller read aloud, bringing characters to life. The sky began to transition to evening hues.
+
+The seamstress measured fabric, cutting with accuracy. A playful sparrow chirped from a branch, full of life. The earthy scent of damp soil. The cartographer corrected old maps, improving their accuracy. The actor portrayed a complex character, embodying their struggles. The first stars twinkled faintly.
+
+The young artist sketched portraits, capturing individual expressions. A distant train whistle sounded, a familiar comfort. The comforting warmth of a hot bath. The astronomer studied nebulae, vast cosmic clouds. The musician improvised a jazz solo, full of spontaneity. The moon appeared, a sliver of light.
+
+The craftsman carved a delicate bird, its feathers detailed. A lone hawk flew overhead, its shadow passing quickly. The clean scent of fresh rain on pavement. The librarian hosted a reading group, fostering discussion. The singer belted out a power ballad, holding nothing back. The night sky deepened to a profound black.
+
+The farmer planted rows of corn, anticipating a good harvest. A tiny ant colony worked diligently, a marvel of organization. The sweet taste of juicy watermelon. The historian wrote a biography, detailing a famous life. The dancer stretched and warmed up, preparing for a long day. The cool night air brought a peaceful silence.
+
+The writer brainstormed ideas, developing new plot lines. A playful puppy gnawed on a chew toy, happy and content. The comforting aroma of baking cookies. The programmer collaborated with a team, building a new app. The poet found inspiration in the mundane. The stars shone brightly, a celestial display.
+
+The researcher analyzed qualitative data, looking for themes. A busy bee flew back to its hive, laden with pollen. The invigorating scent of blooming lavender. The linguist deciphered ancient hieroglyphs, unlocking forgotten messages. The sculptor finished the piece, proud of the creation. The moon cast a silver sheen over the landscape.
+
+The architect presented plans, explaining their vision. A curious cat stalked a leaf, treating it as prey. The satisfying crunch of fresh celery. The detective reviewed surveillance footage, searching for clues. The chef tasted the soup, adjusting the seasoning. The gentle hum of the refrigerator filled the quiet kitchen.
+
+The gardener watered the vegetables, ensuring their growth. A playful squirrel chased another up a tree. The calming scent of fresh basil. The philosopher wrote a treatise, outlining new ideas. The painter applied a glaze, adding depth to the colors. The distant sound of crickets filled the air.
+
+The programmer wrote tests for the code, ensuring robustness. A lone wolf howled mournfully, a call to the wild. The refreshing scent of ocean spray. The historian unearthed ancient artifacts, revealing forgotten cultures. The dancer practiced turns, perfecting balance. The night was still and calm, a perfect canvas for stars.
+
+The baker kneaded the dough, shaping it into loaves. A curious robin hopped on the lawn, looking for worms. The sweet taste of sun-ripened tomatoes. The engineer built
