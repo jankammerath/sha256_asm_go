@@ -133,14 +133,12 @@ zero_done:
     
     // Store length in bits (big-endian) in last 8 bytes
     lsl x21, x21, #3      // Convert to bits
-    // For big-endian 64-bit storage: first 4 bytes = high bits (0), next 4 bytes = low bits
+    // Store as big-endian 64-bit: high 32 bits first, then low 32 bits
     mov w26, #0           // High 32 bits (always 0 for reasonable string lengths)
-    // The length needs to be in big-endian format for SHA-256
-    // Since we're on a little-endian machine, we need to reverse the bytes
-    rev w27, w21          // Low 32 bits in big-endian
-    str w26, [x23, x25]   // Store high 32 bits  
+    rev w27, w21          // Low 32 bits in big-endian format
+    str w26, [x23, x25]   // Store high 32 bits first
     add x28, x25, #4
-    str w27, [x23, x28]   // Store low 32 bits
+    str w27, [x23, x28]   // Store low 32 bits in big-endian
     
     // Initialize hash values
     adrp x24, initial_hash@PAGE
