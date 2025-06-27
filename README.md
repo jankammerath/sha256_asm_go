@@ -22,4 +22,4 @@ sys	1m30.138s
 
 ## Special thanks
 
-Special thanks to (Luke Chadwick)[https://github.com/vertis] for assisting with Claude and thus the creation of the ASM version of this application.
+Special thanks to [Luke Chadwick](https://github.com/vertis) for assisting with Claude and thus the creation of the ASM version of this application.
