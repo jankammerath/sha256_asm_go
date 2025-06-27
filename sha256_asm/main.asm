@@ -133,9 +133,12 @@ zero_done:
     
     // Store length in bits (big-endian) in last 8 bytes
     lsl x21, x21, #3      // Convert to bits
-    // Store as big-endian 64-bit
-    rev x21, x21
-    str x21, [x23, x25]
+    // Store as big-endian 64-bit (high 32 bits first, then low 32 bits)
+    mov w26, #0           // High 32 bits (always 0 for reasonable string lengths)
+    rev w27, w21          // Low 32 bits in big-endian
+    str w26, [x23, x25]   // Store high 32 bits
+    add x28, x25, #4
+    str w27, [x23, x28]   // Store low 32 bits
     
     // Initialize hash values
     adrp x24, initial_hash@PAGE
@@ -176,10 +179,10 @@ print_hash:
     beq print_done
     
     ldr w25, [sp, x24, lsl #2]
-    rev w25, w25          // Convert to big-endian for output
+    // Don't reverse - the hash values are already in correct byte order
     
-    // Print each byte as hex
-    mov x26, #4
+    // Print each byte as hex (8 hex digits per 32-bit word)
+    mov x26, #8
 print_word:
     cbz x26, next_word
     
@@ -251,7 +254,7 @@ process_chunk:
     mov x20, x1           // Hash values address
     add x21, sp, #80      // W array address
     
-    // Copy chunk to W[0..15] and convert to big-endian
+    // Copy chunk to W[0..15] (input is already in little-endian, convert to big-endian)
     mov x22, #0
 copy_chunk:
     cmp x22, #16
