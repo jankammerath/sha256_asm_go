@@ -179,7 +179,7 @@ print_hash:
     beq print_done
     
     ldr w25, [sp, x24, lsl #2]
-    // Don't reverse - the hash values are already in correct byte order
+    rev w25, w25          // Convert to big-endian for output
     
     // Print each byte as hex (8 hex digits per 32-bit word)
     mov x26, #8
@@ -254,15 +254,29 @@ process_chunk:
     mov x20, x1           // Hash values address
     add x21, sp, #80      // W array address
     
-    // Copy chunk to W[0..15] (input is already in little-endian, convert to big-endian)
+    // Copy chunk to W[0..15] (read bytes and pack into big-endian 32-bit words)
     mov x22, #0
 copy_chunk:
     cmp x22, #16
     beq copy_chunk_done
     
-    ldr w23, [x19, x22, lsl #2]
-    rev w23, w23          // Convert to big-endian
-    str w23, [x21, x22, lsl #2]
+    // Read 4 bytes and pack them into a big-endian 32-bit word
+    lsl x23, x22, #2      // x23 = byte offset (x22 * 4)
+    ldrb w24, [x19, x23]  // Load byte 0
+    lsl w24, w24, #24
+    add x23, x23, #1
+    ldrb w25, [x19, x23]  // Load byte 1
+    lsl w25, w25, #16
+    orr w24, w24, w25
+    add x23, x23, #1
+    ldrb w25, [x19, x23]  // Load byte 2
+    lsl w25, w25, #8
+    orr w24, w24, w25
+    add x23, x23, #1
+    ldrb w25, [x19, x23]  // Load byte 3
+    orr w24, w24, w25
+    
+    str w24, [x21, x22, lsl #2]
     add x22, x22, #1
     b copy_chunk
 copy_chunk_done:
