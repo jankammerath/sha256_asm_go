@@ -133,10 +133,12 @@ zero_done:
     
     // Store length in bits (big-endian) in last 8 bytes
     lsl x21, x21, #3      // Convert to bits
-    // Store as big-endian 64-bit (high 32 bits first, then low 32 bits)
+    // For big-endian 64-bit storage: first 4 bytes = high bits (0), next 4 bytes = low bits
     mov w26, #0           // High 32 bits (always 0 for reasonable string lengths)
+    // The length needs to be in big-endian format for SHA-256
+    // Since we're on a little-endian machine, we need to reverse the bytes
     rev w27, w21          // Low 32 bits in big-endian
-    str w26, [x23, x25]   // Store high 32 bits
+    str w26, [x23, x25]   // Store high 32 bits  
     add x28, x25, #4
     str w27, [x23, x28]   // Store low 32 bits
     
@@ -179,7 +181,7 @@ print_hash:
     beq print_done
     
     ldr w25, [sp, x24, lsl #2]
-    rev w25, w25          // Convert to big-endian for output
+    rev w25, w25          // Convert to big-endian for proper hex output
     
     // Print each byte as hex (8 hex digits per 32-bit word)
     mov x26, #8
