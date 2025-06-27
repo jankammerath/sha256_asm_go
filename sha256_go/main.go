@@ -8,6 +8,11 @@ import (
 )
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: go run main.go <string>")
+		return
+	}
+
 	data := os.Args[1]
 	if data == "" {
 		fmt.Println("Please provide a string to hash.")
